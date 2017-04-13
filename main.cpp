@@ -18,20 +18,23 @@ void row_sub(T (&arr)[M][N],int a,int b,int m)
 }
 int main(void) {
     int mat[4][3]={0};
-    int i,j,mul=0;
-    cout<<"Please insert your matrix?";
-    for(i=0;i<4;i++)
-    {
-        for(j=0;j<3;j++)
-        cin>>mat[i][j];
-    }
+    int i,j,k,mul=0;
+    cout<<"Please insert your matrix? ";
     for(i=0;i<3;i++)
     {
-        if(mat[0][i]<mat[0][i+1])
-        {
-            for(j=0;j<4;j++)
-                swap(mat[j][i],mat[j][i+1]);
-        }
+        for(j=0;j<4;j++)
+        cin>>mat[j][i];
+    }
+    for(i=3;i>0;i--)
+    {
+	for(j=0;j<i;j++)
+   	{
+            if(mat[0][i]>mat[0][i+1])
+            {
+            	for(k=0;k<4;k++)
+                    swap(mat[k][j],mat[k][j+1]);
+            }
+    	}
     }
     for(i=0;i<3;i++)
     {
@@ -49,6 +52,7 @@ int main(void) {
             row_sub(mat,j,i,mul);
         }
     }
+    cout<<"Below is the answer matrix:"<<endl;
     for(i=0;i<3;i++)
     {
         for(j=0;j<4;j++)
