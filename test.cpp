@@ -10,11 +10,11 @@ int main(void)
         for(j=0;j<4;j++)
         cin>>mat[j][i];
     }
-    for(i=3;i>0;i--)
+    for(i=2;i>0;i--)
     {
 	for(j=0;j<i;j++)
    	{
-            if(mat[0][i]>mat[0][i+1])
+            if(mat[0][j]>mat[0][j+1])
             {
             	for(k=0;k<4;k++)
                     swap(mat[k][j],mat[k][j+1]);

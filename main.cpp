@@ -25,16 +25,16 @@ int main(void) {
         for(j=0;j<4;j++)
         cin>>mat[j][i];
     }
-    for(i=3;i>0;i--)
+    for(i=2;i>0;i--)
     {
-	for(j=0;j<i;j++)
-   	{
-            if(mat[0][i]>mat[0][i+1])
+        for(j=0;j<i;j++)
+        {
+            if(mat[0][j]>mat[0][j+1])
             {
-            	for(k=0;k<4;k++)
+                for(k=0;k<4;k++)
                     swap(mat[k][j],mat[k][j+1]);
             }
-    	}
+        }
     }
     for(i=0;i<3;i++)
     {
@@ -42,12 +42,12 @@ int main(void) {
         {
             if(i==j)
                 continue;
-            if(!mat[j][i]%mat[j][j])
-                mul=mat[j][i]/mat[j][j];
+            if(!mat[i][j]%mat[i][i])
+                mul=mat[i][j]/mat[i][i];
             else
             {
-                mul=mat[j][i];
-                mat[j][i]*=mat[j][j];
+                mul=mat[i][j];
+                mat[i][j]*=mat[i][i];
             }
             row_sub(mat,j,i,mul);
         }
